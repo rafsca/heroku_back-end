@@ -1,0 +1,27 @@
+type Query {
+  products(search: String, offset: Int, limit: Int): [Product!]!
+  product(id: Int!): Product
+  me: User
+  cart: [CartItem!]!
+  orders: [Order!]!
+}
+
+type Mutation {
+  signup(email: String!, password: String!, name: String): AuthPayload!
+  login(email: String!, password: String!): AuthPayload!
+  createProduct(name: String!, description: String, price: Float!, category: String): Product!
+  updateProduct(id: Int!, name: String, description: String, price: Float, category: String, stock: Int, imageUrl: String): Product!
+  deleteProduct(id: Int!): Boolean!
+  addToCart(productId: Int!, quantity: Int = 1): CartItem!
+  createOrder: Order!
+  removeFromCart(productId: Int!): Boolean!
+  updateCartItem(productId: Int!, quantity: Int!): CartItem
+}
+
+type AuthPayload { token: String!, user: User! }
+
+type User { id: Int!, email: String!, name: String, role: String, createdAt: String }
+type Product { id: Int!, name: String!, description: String, price: Float!, category: String, stock: Int!, imageUrl: String, createdAt: String }
+type CartItem { id: Int!, product: Product!, quantity: Int! }
+type OrderItem { id: Int!, product: Product, quantity: Int!, price: Float! }
+type Order { id: Int!, items: [OrderItem!]!, total: Float!, status: String!, createdAt: String! }

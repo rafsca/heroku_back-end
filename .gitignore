@@ -1,0 +1,81 @@
+# Node modules
+node_modules/
+client-angular/node_modules/
+
+# Build / output
+dist/
+build/
+out/
+client-angular/
+
+# Angular / Vite / cache
+.angular/
+.angular/cache/
+.vite/
+.vite/
+.cache/
+.tmp/
+
+# TypeScript
+*.tsbuildinfo
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Environment files (keep secrets out of git)
+.env
+.env.*
+
+# IDEs and editors
+.vscode/
+.idea/
+*.sublime-workspace
+*.sublime-project
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Coverage and reports
+coverage/
+.nyc_output/
+report/
+
+# Testing
+/functional-output/
+
+# Misc
+*.tgz
+*.zip
+*.bak
+*.swp
+
+# DB files
+*.sqlite
+*.db
+
+# Lockfiles (optional: remove if you commit lockfiles)
+# package-lock.json
+# yarn.lock
+
+# ESLint
+.eslintcache
+
+# Optional: ignore compiled JS if you keep TypeScript sources
+*.js
+*.js.map
+
+# local env for Angular dev server
+client-angular/.angular
+client-angular/.cache
+
+# Ignore generated Angular cache and build artifacts
+client-angular/.angular/cache
+
+# VS Code test host output
+.vscode-test/
